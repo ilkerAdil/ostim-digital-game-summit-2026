@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 Dijital Oyun Zirvesi | OSTİM Teknik Üniversitesi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ana kart kutusunu ortalamak icin kullanilan sarmalayici div -->
+    <div class="kutu">
+        <!-- ucretiz rozeti position absolute ile sabit kosede duruyo -->
+        <span class="ucretsizRozet">ÜCRETSİZ</span>
+
+        <!-- sayfa baslik alani logo + etkinlik adi + tarih bilgisi -->
+        <header class="kutuBasligi">
+            <div class="ustBaslikAlani">
+                <img src="ostim-logo.png" alt="OSTİM Teknik Üniversitesi Logosu">
+                <div class="baslikMetinleri">
+                    <p class="otu">OSTİM TEKNİK ÜNİVERSİTESİ | BTMYO</p>
+                    <h1>2026 Dijital Oyun Zirvesi</h1>
+                    <p class="etkinlikBilgi">28 Aralık 2026 • Ana Kampüs Konferans Salonu</p>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="etkinlikProgrami">
+                <h2>Zirve Oturum Programı</h2>
+                <table class="programTablosu">
+                    <thead>
+                        <tr>
+                            <th>Saat</th>
+                            <th>Oturum Başlığı</th>
+                            <th>Salon</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>10:00 - 11:30</td>
+                            <td>Oyun Motorları ve Yeni Nesil Teknolojiler</td>
+                            <td>Ana Salon</td>
+                        </tr>
+                        <tr>
+                            <td>13:00 - 14:30</td>
+                            <td>Oyun Sektöründe Kariyer ve Girişimcilik</td>
+                            <td>Ana Salon</td>
+                        </tr>
+                        <tr>
+                            <td>15:00 - 16:30</td>
+                            <td>Bağımsız Geliştiriciler İçin Yapay Zeka Araçları</td>
+                            <td>Ana Salon</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="programNotu">Not: Oturumlar arasında 15 dakikalık çay/kahve arası verilecektir.</p>
+            </section>
+
+            <!-- kayit formu bolumu -->
+            <section class="katilimciKayit">
+                <h2>Katılımcı Kayıt Formu</h2>
+                <!-- !!! HOCAM METHOD GET OLARAK KULLANSAM CALİSİYOR AMA LİVE SERVERLE ACİNCA POSTTA 405 HATASİ VERİYOR-->
+                <!-- POST kullandim cunku form verisi URLde gozukmemeli guvenli iletim icin -->
+                <form action="kayitBasarili.html" method="POST" class="kayitFormu">
+                    <div class="adSoyad">
+                        <label for="ad_soyad">Adınız Soyadınız:</label>
+                        <input type="text" id="ad_soyad" name="ad_soyad" class="girdiKutusu" placeholder="Örn: İlker Adil ÜNLÜ" required>
+                    </div>
+
+                    <!-- email alani: type=email sayesinde tarayici format kontrolu yapiyor -->
+                    <div class="adSoyad">
+                        <label for="eposta">E-posta Adresiniz:</label>
+                        <input type="email" id="eposta" name="eposta" class="girdiKutusu" placeholder="261234567@ostimteknik.edu.tr" required>
+                    </div>
+
+                    <!-- radio butonlar: ayni name ile gruplandirildım sadece biri seciliyor -->
+                    <div class="adSoyad">
+                        <label>Katılımcı Türü:</label>
+                        <div class="radioAlani">
+                            <input type="radio" id="turOgrenci" name="katilimci_turu" value="ogrenci" checked required>
+                            <label for="turOgrenci">Öğrenci</label>
+
+                            <input type="radio" id="turMezun" name="katilimci_turu" value="mezun">
+                            <label for="turMezun">Mezun</label>
+
+                            <input type="radio" id="turSektor" name="katilimci_turu" value="sektor">
+                            <label for="turSektor">Sektör</label>
+
+                            <input type="radio" id="turMisafir" name="katilimci_turu" value="misafir">
+                            <label for="turMisafir">Misafir</label>
+                        </div>
+                    </div>
+
+                    <!-- gönder butonu hover efekti CSSte tanimli -->
+                    <button type="submit" class="kayitButonu">Yerinizi Ayırın (Ücretsiz Kayıt)</button>
+                </form>
+            </section>
+        </main>
+
+        <!-- telif ve ogrenci kunye bilgisi -->
+        <footer>
+            <p>© 2026 OSTİM Teknik Üniversitesi - Bilişim Teknolojileri MYO</p>
+            <p class="ogrenciKunye">BTO125 İlker Adil ÜNLÜ Proje Ödevi</p>
+        </footer>
+    </div>
+
+</body>
+</html>
